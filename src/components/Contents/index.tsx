@@ -5,7 +5,7 @@ const Contents = () => {
   return (
     <>
       <S.Major>
-        {/* <SVG.Dot /> */}
+        <SVG.Dot />
         Frontend
       </S.Major>
       <S.Content_wrap>

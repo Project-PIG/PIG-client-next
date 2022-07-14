@@ -16,9 +16,9 @@ export const Major = styled.div`
   margin-top: 80px;
   margin-left: 18%;
 
-  img {
-    width: 16px;
-    height: 16px;
+  svg {
+    margin-bottom: 8px;
+    margin-right: 12px;
   }
 `;
 export const Content_wrap = styled.div`
