@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
-
+import Header from "../components/Header";
+import Contents from "../components/Contents";
 const Home: NextPage = () => {
   return (
-    <div>
-      <div>ss</div>
-    </div>
+    <>
+      <Header />
+      <Contents />
+    </>
   );
 };
 
