@@ -149,7 +149,7 @@ export const MajorBtn = styled.button<MajorType>`
   border: none;
   outline: none;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   transition: 0.2s;
 `;
