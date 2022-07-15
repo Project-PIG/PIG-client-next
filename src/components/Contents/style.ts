@@ -101,4 +101,7 @@ export const Chat = styled.button`
   background-color: white;
   color: #ff644f;
   font-size: 12px;
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
 `;
