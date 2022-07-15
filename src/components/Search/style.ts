@@ -45,10 +45,10 @@ export const Wrap = styled.div`
     outline: none;
     border: none;
     border-bottom: #514943 2px solid;
-    width: 436px;
+    width: 460px;
     color: #43372f;
     padding-bottom: 6px;
-    padding-right: 6px;
+    padding-right: 50px;
 
     &::placeholder {
       color: #b6abaa;
@@ -59,18 +59,9 @@ export const Wrap = styled.div`
 export const Search_wrap = styled.div`
   display: flex;
   background-color: #fff1ef;
-`;
-
-export const Button = styled.button`
-  outline: none;
-  border: none;
-  border-bottom: #514943 2px solid;
-  background-color: #fff1ef;
-  background-image: url(png/Search_icon.png);
-  background-repeat: no-repeat;
-  width: 40px;
-  padding-right: 44px;
-  cursor: pointer;
+  svg {
+    margin-left: -40px;
+  }
 `;
 
 export const Tag_wrap = styled.div`

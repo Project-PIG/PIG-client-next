@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as S from "./style";
+import * as SVG from "../../SVG";
 
 const Search = () => {
   const [clickTag, setClickTag] = useState([
@@ -56,7 +57,7 @@ const Search = () => {
         <S.Wrap>
           <S.Search_wrap>
             <input placeholder="어떤 분을 찾으시나요?" />
-            <S.Button />
+            <SVG.Search_icon />
           </S.Search_wrap>
           <S.Tag_wrap>
             <p>전공분야</p>
