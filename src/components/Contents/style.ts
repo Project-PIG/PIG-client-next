@@ -22,7 +22,7 @@ export const Major = styled.div`
   font-size: 45px;
   font-weight: bold;
   color: #ff644f;
-  width: 90%;
+  width: 73%;
 
   svg {
     margin-bottom: 8px;
@@ -32,11 +32,11 @@ export const Major = styled.div`
 
 export const Content_wrap = styled.div`
   margin-top: 80px;
-  width: 90%;
+  width: 80%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 2rem;
   margin-bottom: 100px;
 `;
 
@@ -60,7 +60,7 @@ export const Wrap = styled.div`
   height: 170px;
   border-radius: 8px;
   box-shadow: 2px 0px 10px #aea4aa;
-  margin: 0px 10px;
+  margin: 2rem 0;
   position: relative;
 `;
 

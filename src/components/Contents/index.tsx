@@ -1,36 +1,84 @@
 import React from "react";
 import * as S from "./style";
 import * as SVG from "../../SVG";
-const Contents = () => {
-  const list = [
-    1, 12, 12, 1, 2, 21, 21, 21, 2, 12, 1, 2, 12, 12, 1, 2, 12, 1, 21, 2, 12, 1,
-    2, 12, 1, 21, 2, 12, 1, 2, 12,
-  ];
+import { List } from "./DummyData";
+
+type SelectMajorTpye = string[];
+
+const Contents = ({
+  list,
+  search,
+}: {
+  list: SelectMajorTpye;
+  search: string;
+}) => {
+  const CutSentence = (e: any) => {
+    if (e.length >= 14) {
+      return e.substr(0, 14) + "...";
+    } else return e;
+  };
   return (
     <>
       <S.Wrapper>
-        <S.Major>
-          <SVG.Dot />
-          Frontend
-        </S.Major>
-        <S.Content_wrap>
-          {list.map((_, index) => {
+        {list &&
+          list.map((i, index) => {
             return (
-              <S.Wrap key={index}>
-                <S.ProfilePicture />
-                <S.Name_wrap>
-                  <S.Name>곽희상</S.Name>
-                  <h3>2기</h3>
-                </S.Name_wrap>
-                <S.Description>프론트엔드입니다.</S.Description>
-                <S.Bottom_wrap>
-                  <S.Tag>#FE</S.Tag>
-                  <S.Chat>채팅</S.Chat>
-                </S.Bottom_wrap>
-              </S.Wrap>
+              <>
+                <S.Major>
+                  <SVG.Dot />
+                  {i}
+                </S.Major>
+                <S.Content_wrap>
+                  {List.filter((j) => j.major.includes(i)).map((e, index) => {
+                    return (
+                      <S.Wrap key={index}>
+                        <S.ProfilePicture />
+                        <S.Name_wrap>
+                          <S.Name>{e.name}</S.Name>
+                          <h3>{e.grade}기</h3>
+                        </S.Name_wrap>
+                        <S.Description>{CutSentence(e.aboutMe)}</S.Description>
+                        <S.Bottom_wrap>
+                          {e.major.map((i, indexx) => {
+                            return <S.Tag key={indexx}>#{i}</S.Tag>;
+                          })}
+                          <S.Chat>채팅</S.Chat>
+                        </S.Bottom_wrap>
+                      </S.Wrap>
+                    );
+                  })}
+                </S.Content_wrap>
+              </>
             );
           })}
-        </S.Content_wrap>
+        {search && (
+          <>
+            <S.Major>
+              <SVG.Dot />
+              {search}...
+            </S.Major>
+            <S.Content_wrap>
+              {List.filter((j) => j.name.includes(search)).map((e, index) => {
+                return (
+                  <S.Wrap key={index}>
+                    <S.ProfilePicture />
+                    <S.Name_wrap>
+                      <S.Name>{e.name}</S.Name>
+                      <h3>{e.grade}기</h3>
+                    </S.Name_wrap>
+                    <S.Description>{CutSentence(e.aboutMe)}</S.Description>
+                    <S.Bottom_wrap>
+                      {e.major.map((i, indexx) => {
+                        return <S.Tag key={indexx}>#{i}</S.Tag>;
+                      })}
+                      <S.Chat>채팅</S.Chat>
+                    </S.Bottom_wrap>
+                  </S.Wrap>
+                );
+              })}
+            </S.Content_wrap>
+          </>
+        )}
       </S.Wrapper>
     </>
   );

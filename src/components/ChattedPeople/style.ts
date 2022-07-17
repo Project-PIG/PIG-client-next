@@ -27,27 +27,38 @@ export const Search = styled.input`
   margin-top: 20px;
   margin-bottom: 16px;
 `;
+export const ProfileImg = styled.img<UserType>`
+  width: 56px;
+  height: 56px;
+  background-color: white;
+  margin-left: 14px;
+  background: #000;
+  border-radius: 50%;
+  ${(e) => (e.state ? "box-shadow: 0px 5px 5px rgba(0, 0, 0)" : "")};
+`;
 
-export const User = styled.div`
+export const UserWeapper = styled.div`
+  height: 820px;
+  overflow: scroll;
+`;
+type UserType = {
+  state: boolean;
+};
+
+export const User = styled.div<UserType>`
   width: 94%;
   height: 80px;
-  background-color: #ff644f;
+  background-color: ${(e) => (e.state ? "#ff644f" : "")};
   border-radius: 40px;
   margin: 0 auto;
   margin-top: 10px;
   display: flex;
   align-items: center;
   border: 1px solid black;
-  svg {
-    width: 56px;
-    height: 56px;
-    background-color: white;
-    border-radius: 56px;
-    margin-left: 14px;
-  }
+  transition: 0.5s;
 `;
 
-export const User_Wrap = styled.div`
+export const User_Wrap = styled.div<UserType>`
   margin-left: 14px;
   h2 {
     font-size: 18px;
@@ -56,8 +67,9 @@ export const User_Wrap = styled.div`
   }
   p {
     font-size: 14px;
-    color: white;
+    color: ${(e) => (e.state ? "#FCFCFC" : "#898686")};
     margin: 0;
+    transition: 0.5s;
   }
 `;
 

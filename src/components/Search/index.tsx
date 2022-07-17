@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import * as SVG from "../../SVG";
 
-const Search = () => {
+const Search = ({ list, fn, search, setSearch }: any) => {
   type ClickTagType = {
     name: string;
     select: boolean;
   }[];
+
   const [clickTag, setClickTag] = useState<ClickTagType>([
     {
       name: "Backend",
@@ -69,14 +70,34 @@ const Search = () => {
       })
     );
   };
-
+  useEffect(() => {
+    fn(
+      clickTag
+        .filter((e) => e.select === true)
+        .map((e) => {
+          if (e.name === "Frontend") return "FE";
+          else if (e.name === "Backend") return "BE";
+          else return e.name;
+        })
+    );
+  }, [clickTag]);
+  useEffect(() => {
+    console.log(search);
+  }, [search]);
   return (
     <>
-      {/* <S.Font /> */}
       <S.Wrapper>
         <S.Wrap>
           <S.Search_wrap>
-            <input placeholder="어떤 분을 찾으시나요?" />
+            <input
+              type="text"
+              value={search}
+              onChange={(e: any) => {
+                setSearch(e.target.value);
+                fn([]);
+              }}
+              placeholder="어떤 분을 찾으시나요?"
+            />
             <SVG.Search_icon />
           </S.Search_wrap>
           <S.Tag_wrap>
