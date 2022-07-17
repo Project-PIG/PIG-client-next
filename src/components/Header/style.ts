@@ -11,6 +11,10 @@ export const Header = styled.header`
   padding: 0 15vw;
   z-index: 100;
   background: #ffffff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  div {
+    cursor: pointer;
+  }
 `;
 
 export const NavWrapper = styled.div`

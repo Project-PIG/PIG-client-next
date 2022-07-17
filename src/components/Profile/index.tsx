@@ -19,7 +19,7 @@ export default function ChangeProfile() {
   ];
 
   const [Major, setMajor] = useState<MajorType>(["FE", "BE"]);
-
+  const [MainMajor, setMainMajor] = useState<MajorType>(["FE", "BE"]);
   const MakeMajorList = (e: any) => {
     if (Major.length >= 2) {
       setMajor([e]);
@@ -44,9 +44,9 @@ export default function ChangeProfile() {
             }
           ></S.AboutMe>
           <S.FixWrapper Expans={viewAll}>
-            <S.MyMajor>#FE</S.MyMajor>
+            <S.MyMajor>#{Major[0]}</S.MyMajor>
             {viewAll ? (
-              <S.MyMajor>#FE</S.MyMajor>
+              <S.MyMajor>{Major[1] && "#" + Major[1]}</S.MyMajor>
             ) : (
               <S.Btn onClick={() => setViewAll(!viewAll)}>수정</S.Btn>
             )}
@@ -68,8 +68,22 @@ export default function ChangeProfile() {
               </S.MajorListWrapper>
               <S.InformMaxMajor>2개까지만 선택 가능</S.InformMaxMajor>
               <S.CheckBtnWrapper>
-                <S.Btn>확인</S.Btn>
-                <S.Btn onClick={() => setViewAll(!viewAll)}>취소</S.Btn>
+                <S.Btn
+                  onClick={() => {
+                    setViewAll(!viewAll);
+                    setMainMajor(Major);
+                  }}
+                >
+                  확인
+                </S.Btn>
+                <S.Btn
+                  onClick={() => {
+                    setViewAll(!viewAll);
+                    setMajor(MainMajor);
+                  }}
+                >
+                  취소
+                </S.Btn>
               </S.CheckBtnWrapper>
             </>
           )}

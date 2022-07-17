@@ -1,5 +1,14 @@
 import styled from "@emotion/styled";
 
+export const Wrapper = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+`;
+
 export const Major = styled.div`
   @font-face {
     font-family: "SUIT-Medium";
@@ -13,19 +22,21 @@ export const Major = styled.div`
   font-size: 45px;
   font-weight: bold;
   color: #ff644f;
-  margin-top: 80px;
-  margin-left: 18%;
+  width: 73%;
 
   svg {
     margin-bottom: 8px;
     margin-right: 12px;
   }
 `;
+
 export const Content_wrap = styled.div`
   margin-top: 80px;
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
   margin-bottom: 100px;
 `;
 
@@ -49,7 +60,7 @@ export const Wrap = styled.div`
   height: 170px;
   border-radius: 8px;
   box-shadow: 2px 0px 10px #aea4aa;
-  margin: 0px 10px;
+  margin: 2rem 0;
   position: relative;
 `;
 

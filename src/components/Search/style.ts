@@ -32,12 +32,19 @@ export const Search_bg = styled.div`
   height: 622px;
 `;
 
+export const Wrapper = styled.div`
+  margin-top: 80px;
+  width: 100%;
+  height: 622px;
+  background: #fff1ef;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`;
+
 export const Wrap = styled.div`
   width: 480px;
   height: 260px;
-  position: absolute;
-  top: 210px;
-  left: 340px;
   input {
     font-family: "SUIT-Medium";
     font-size: 32px;
@@ -77,7 +84,11 @@ export const Tag_wrap = styled.div`
   }
 `;
 
-export const Tag = styled.button`
+type TagType = {
+  clicked: string;
+};
+
+export const Tag = styled.button<TagType>`
   font-family: "ONE-Mobile-POP";
   border: none;
   background-color: white;
@@ -96,4 +107,41 @@ export const Tag = styled.button`
     box-shadow: 4px 4px 10px #a7a5a6;
     padding-top: -6px;
   }
+`;
+export const MajorListWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 1.5rem;
+  transition: 0.5s;
+  animation: animate 1s;
+  @keyframes animate {
+    0% {
+      opacity: calc(0);
+    }
+  }
+`;
+
+type BtnType = {
+  state: boolean;
+};
+
+export const MajorBtn = styled.button<BtnType>`
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  width: auto;
+  height: 40px;
+  padding: 6px 32px;
+  border-radius: 5px;
+  border: 1px solid ${(e) => (e.state ? "#FF644F" : "#ffffff")};
+  outline: none;
+  font-weight: 600;
+  font-size: 22px;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(54, 36, 47, 0.2);
+  border-radius: 8px;
+  color: ${(e) => (e.state ? "#FF644F" : "#43372F")};
+  background: #ffffff;
+  transition: 0.2s;
 `;
