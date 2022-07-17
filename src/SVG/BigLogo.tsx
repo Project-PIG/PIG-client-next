@@ -1,4 +1,4 @@
-export function LoginLogo() {
+export function BigLogo() {
   return (
     <svg
       width="486"

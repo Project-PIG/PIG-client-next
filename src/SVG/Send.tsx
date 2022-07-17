@@ -11,9 +11,9 @@ export function Send() {
         <path
           d="M21.5503 7.50931L2.35986 11.6812L11.5379 17.5217M21.5503 7.50931L17.3785 26.6998L11.5379 17.5217M21.5503 7.50931L11.5379 17.5217"
           stroke="#FF6767"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
@@ -24,9 +24,9 @@ export function Send() {
           width="23.1904"
           height="23.1904"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"

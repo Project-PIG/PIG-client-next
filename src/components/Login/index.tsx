@@ -6,7 +6,7 @@ export default function Login() {
     <>
       <S.Wrapper>
         <S.LoginFormWrapper>
-          <SVG.LoginLogo />
+          <SVG.BigLogo />
           <S.Title>Sign in</S.Title>
           <S.OauthButton>
             <SVG.Google />
