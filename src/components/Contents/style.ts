@@ -99,10 +99,10 @@ export const Bottom_wrap = styled.div`
   display: flex;
   width: 88%;
   padding: 14px;
-  justify-content: space-between;
 `;
 export const Tag = styled.p`
   color: #ff644f;
+  margin-right: 14px;
 `;
 
 export const Chat = styled.button`
