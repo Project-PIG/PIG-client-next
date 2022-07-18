@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./style";
 import * as SVG from "../../SVG";
-import { List } from "./DummyData";
+import { List } from "./dummyData";
 
 type SelectMajorTpye = string[];
 
@@ -40,7 +40,7 @@ const Contents = ({
                         <S.Description>{CutSentence(e.aboutMe)}</S.Description>
                         <S.Bottom_wrap>
                           {e.major.map((i, indexx) => {
-                            return <S.Tag key={indexx}>#{i}</S.Tag>;
+                            return <S.Tag key={indexx}>{i && "#" + i}</S.Tag>;
                           })}
                           <S.Chat>채팅</S.Chat>
                         </S.Bottom_wrap>

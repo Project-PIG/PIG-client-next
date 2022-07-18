@@ -38,7 +38,7 @@ export const ProfileImg = styled.img<UserType>`
 `;
 
 export const UserWeapper = styled.div`
-  height: 820px;
+  height: 84%;
   overflow: scroll;
 `;
 type UserType = {
