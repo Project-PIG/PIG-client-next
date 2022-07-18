@@ -21,7 +21,7 @@ const Contents = ({
     <>
       <S.Wrapper>
         {list &&
-          list.map((i, index) => {
+          list.map((i) => {
             return (
               <>
                 <S.Major>
